@@ -1,5 +1,7 @@
 # Git Year in Review · git 年度研发报告
 
+[![skills.sh](https://skills.sh/b/ynnyh/git-year-in-review)](https://skills.sh/ynnyh/git-year-in-review)
+
 [English](#english) ｜ 一个 **Agent Skill**：让 AI 编码助手（ZCode / Claude Code / Trae 等支持 Agent Skills 的工具）读取你本地的 git 仓库，生成一份**个人年度研发报告**——年终总结、年度复盘、述职材料的底稿。
 
 **核心特性**
@@ -12,14 +14,20 @@
 
 ## 安装
 
-把本文件夹复制（或 clone）到你的 agent skills 目录：
+**方式一：skills CLI（推荐，适用于 Claude Code / Codex / Cursor / OpenCode 等 75+ agent）**
+
+```bash
+npx skills add ynnyh/git-year-in-review
+```
+
+**方式二：手动复制到 agent skills 目录**
 
 ```bash
 # ZCode / Claude Code（用户级）
-git clone <repo> ~/.zcode/skills/git-year-in-review
+git clone https://github.com/ynnyh/git-year-in-review.git ~/.zcode/skills/git-year-in-review
 # 或 Claude Code:
-git clone <repo> ~/.claude/skills/git-year-in-review
-# Trae 及其他支持 Agent Skills 的工具按其 skills 目录放置
+git clone https://github.com/ynnyh/git-year-in-review.git ~/.claude/skills/git-year-in-review
+# Trae 及其他支持 Agent Skills 的工具按其 skills 目录放置（或用 Upload Skill 上传 zip）
 ```
 
 不需要 pip install，不需要 API key。
@@ -81,7 +89,8 @@ An **Agent Skill** that turns the git history of your local repositories into a 
 - **Deterministic engine + LLM narrative**: stdlib-only Python (python3 + git) for extraction/stats; per-project narratives written by your agent as revisable JSON files.
 
 ```bash
-git clone <repo> ~/.claude/skills/git-year-in-review
+git clone https://github.com/ynnyh/git-year-in-review.git ~/.claude/skills/git-year-in-review
+# or: npx skills add ynnyh/git-year-in-review
 # then just ask your agent:
 # "Generate my 2026 year-in-review report from ~/work, my email is me@example.com"
 ```
